@@ -32424,6 +32424,8 @@ function isFreeDayLabel(v){return String(v||'').includes('自由安排')||String
 applyCurriculumPath();
 const STORE_KEY = 'airway-study-app-v1';
 const RESOURCE_PREFIX = '/Volumes/Download/CodexWorkspace/07_baidu_sync/mirror/apps/QNAP_HybridBackupSync';
+const BAIDU_ROOT = 'https://pan.baidu.com/disk/main?version=4.23.5&from=mac_yunguanjia&channel=1099b&privilege=#/index?category=all&path=';
+const NAS_ROOT = 'https://yxynas-uf9s.cn79.ug.link/desktop/?os=ugospro#/loading';
 let currentView = 'today';
 const runtimeUploadUrls = {};
 let focusInterval=null, focusRemaining=0, focusContextDate='';
@@ -32685,11 +32687,13 @@ function candidateResources(t){
   return pool.map(r=>{
     const tagScore=(r.tags||[]).reduce((n,tag)=> n + (text.includes(tag) ? 1 : 0), 0);
     const titleScore=text.includes(r.title) ? 2 : 0;
-    const videoCloudBonus=(r.type==='video' && (r.baiduUrl || r.nasUrl || r.cloudUrl || r.oneDriveUrl || r.icloudUrl)) ? 8 : 0;
+    const hasCloud=!!(r.baiduUrl || r.nasUrl || r.cloudUrl || r.oneDriveUrl || r.icloudUrl || derivedBaiduUrl(r));
+    const cloudBonus=hasCloud ? 7 : 0;
+    const videoCloudBonus=(r.type==='video' && hasCloud) ? 8 : 0;
     const pdfBonus=(r.type==='pdf') ? 2 : 0;
     const availableBonus=r.available ? 1 : 0;
     const unavailableVideoPenalty=(r.type==='video' && !(r.baiduUrl || r.nasUrl || r.cloudUrl || r.oneDriveUrl || r.icloudUrl)) ? -5 : 0;
-    return {r, score:tagScore + titleScore + videoCloudBonus + pdfBonus + availableBonus + unavailableVideoPenalty};
+    return {r, score:tagScore + titleScore + cloudBonus + videoCloudBonus + pdfBonus + availableBonus + unavailableVideoPenalty};
   }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).map(x=>x.r);
 }
 function matchedResources(t){return candidateResources(t).filter(isOpenableResource).slice(0,4)}
@@ -32738,7 +32742,7 @@ function resourceOpenButton(r, kind){
   if(r.custom&&r.kind==='file')return `<button class="primary concise-open open-custom-resource" type="button" data-resource-id="${esc(r.id)}" onclick="(window.opener&&window.opener.openCustomResource?window.opener:window).openCustomResource('${esc(r.id)}')">打开资料</button>`;
   if(r.custom&&r.url)return `<a class="primary concise-open" href="${esc(r.url)}" target="_blank" rel="noopener">打开网页</a>`;
   if(r.notabilityUrl) return `<a class="primary concise-open" href="${r.notabilityUrl}" target="_blank" rel="noopener">Notability 打开</a>`;
-  if(r.type==='pdf') return `<a class="primary concise-open open-file" data-url="${esc(resourceUrl(r))}" data-path="${esc(r.path||'')}" href="${resourceUrl(r)}" target="_blank" rel="noopener">直接打开</a>`;
+  if(r.type==='pdf') return `<a class="primary concise-open open-file" data-title="${esc(r.title||'PDF')}" data-url="${esc(resourceUrl(r))}" data-path="${esc(r.path||'')}" href="${resourceUrl(r)}" target="_blank" rel="noopener">${resourceLabel(r)}</a>`;
   if(r.type==='video' && r.baiduUrl) return `<a class="primary concise-open open-file baidu-play" data-title="${esc(r.title)}" data-baidupath="${esc(r.baiduPath || '')}" data-url="${esc(r.baiduUrl)}" href="${r.baiduUrl}" target="_blank" rel="noopener">百度目录播放</a>`;
   return `<a class="primary concise-open open-file" data-url="${esc(resourceUrl(r))}" href="${resourceUrl(r)}" target="_blank" rel="noopener">打开${kind}</a>`;
 }
@@ -32792,6 +32796,22 @@ function fileUrl(path){
 function mediaUrl(r){
   return r.mediaRel || (r.mediaId ? fileUrl(r.path || '') : '');
 }
+function isMobileClient(){
+  return /iPhone|iPad|iPod|Android|Mobile/i.test(navigator.userAgent||'') || window.matchMedia?.('(pointer:coarse)').matches;
+}
+function derivedBaiduUrl(r){
+  const raw=String(r?.path||'').replaceAll('\\','/');
+  const marker='/mirror/apps/QNAP_HybridBackupSync/';
+  const pos=raw.indexOf(marker);
+  if(pos<0)return '';
+  const rel=raw.slice(pos+marker.length);
+  const folder=rel.includes('/')?rel.slice(0,rel.lastIndexOf('/')):'';
+  const cloudPath='/apps/QNAP_HybridBackupSync'+(folder?'/'+folder:'');
+  return BAIDU_ROOT+encodeURIComponent(cloudPath);
+}
+function directCloudUrl(r){
+  return r.cloudUrl || r.nasUrl || r.baiduUrl || r.oneDriveUrl || r.icloudUrl || derivedBaiduUrl(r);
+}
 function isPlayableVideo(r){return false}
 function isOpenableResource(r){
   if(r.custom&&r.kind==='file')return true;
@@ -32803,7 +32823,8 @@ function isOpenableResource(r){
 function resourceUrl(r){
   if(r.custom&&r.url)return r.url;
   if(r.custom&&r.kind==='file')return '#';
-  const direct = r.cloudUrl || r.nasUrl || r.baiduUrl || r.oneDriveUrl || r.icloudUrl;
+  const direct = directCloudUrl(r);
+  if(isMobileClient())return direct || NAS_ROOT;
   if(r.notabilityUrl)return r.notabilityUrl;
   return direct || fileUrl(r.path || '');
 }
@@ -32813,11 +32834,15 @@ function resourceSource(r){
   if(r.oneDriveUrl) return 'OneDrive';
   if(r.icloudUrl) return 'iCloud';
   if(r.cloudUrl) return '云盘';
+  if(derivedBaiduUrl(r)) return '百度网盘目录';
+  if(isMobileClient()) return 'NAS';
   return '本机文件';
 }
 function resourceLabel(r){
   if(r.baiduUrl && r.type === 'video') return '打开百度目录播放';
   if(r.baiduUrl) return '打开百度目录';
+  if(isMobileClient() && derivedBaiduUrl(r)) return r.type==='video'?'百度目录播放':'百度网盘打开目录';
+  if(isMobileClient() && !directCloudUrl(r)) return '在 NAS 中查找';
   if(r.type === 'video') return (resourceSource(r)==='本机文件') ? '打开/观看视频' : `打开${resourceSource(r)}视频`;
   if(r.type === 'pdf') return r.notabilityUrl?'打开 Notability':'直接打开 PDF';
   return `打开${resourceSource(r)}资源`;
@@ -32832,7 +32857,7 @@ function resourceButtons(r){
   if(r.type === 'pdf'){
     const title = esc(r.title || 'PDF');
     const url=resourceUrl(r), inNotability=!!r.notabilityUrl;
-    return `<div class="resource-card"><div><strong>${r.title}</strong><p>PDF · ${inNotability?'Notability':'直接打开'} · ${shownPath}${sourceChip}${extra}</p></div><a class="primary ${inNotability?'':'open-file'}" data-url="${esc(url)}" data-path="${esc(r.path||'')}" href="${url}" target="_blank" rel="noopener">${inNotability?'在 Notability 打开':'直接打开 PDF'}</a><div class="resource-note">书名：${title}。${inNotability?'已配置 Notability 入口。':'Notability 中没有时，直接打开原始 PDF。'}</div></div>`;
+    return `<div class="resource-card"><div><strong>${r.title}</strong><p>PDF · ${inNotability?'Notability':source} · ${shownPath}${sourceChip}${extra}</p></div><a class="primary ${inNotability?'':'open-file'}" data-title="${title}" data-url="${esc(url)}" data-path="${esc(r.path||'')}" href="${url}" target="_blank" rel="noopener">${inNotability?'在 Notability 打开':resourceLabel(r)}</a><div class="resource-note">书名：${title}。${inNotability?'已配置 Notability 入口。':isMobileClient()?'手机端优先打开百度网盘或 NAS。':'直接打开原始 PDF。'}</div></div>`;
   }
   if(r.type === 'video' && r.baiduUrl){
     return `<div class="resource-card"><div><strong>${r.title}</strong><p>video · 百度云目录播放${sourceChip}${extra}</p></div><a class="primary open-file baidu-play" data-title="${esc(r.title)}" data-baidupath="${esc(r.baiduPath || '')}" data-url="${esc(r.baiduUrl)}" href="${r.baiduUrl}" target="_blank" rel="noopener">打开百度目录播放</a></div>`;
@@ -32851,9 +32876,22 @@ function bindResourceButtons(){
   document.querySelectorAll('.open-file').forEach(link=>{
     const direct = link.dataset.url || '';
     link.href = direct || fileUrl(link.dataset.path || link.getAttribute('data-path'));
+    if(isMobileClient()){
+      link.target='_self';
+      link.addEventListener('click',e=>{
+        const url=link.dataset.url || link.href;
+        if(!/^https?:/i.test(url))return;
+        e.preventDefault();
+        const title=link.dataset.title || link.closest('.resource-card,.map-cell')?.querySelector('strong')?.textContent || '学习资料';
+        const source=/pan\.baidu\.com/i.test(url)?'百度网盘':/ug\.link/i.test(url)?'NAS':'云端资料';
+        const ok=confirm(`即将打开${source}。\n\n目标内容：${title}\n\n若进入目录，请点击同名文件或视频。`);
+        if(ok)window.location.assign(url);
+      },{capture:true});
+    }
     if(link.classList.contains('baidu-play') && !link.dataset.boundConfirm){
       link.dataset.boundConfirm='1';
       link.addEventListener('click',e=>{
+        if(isMobileClient())return;
         const title=link.dataset.title || '视频/资料';
         const p=link.dataset.baidupath || '百度网盘对应目录';
         const ok=confirm(`即将打开百度网盘目录。\n\n应打开内容：${title}\n所在目录：${p}\n\n进入后请在目录中点同名视频播放。`);
