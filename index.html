@@ -109,6 +109,13 @@ button,.primary,.secondary,.danger,.import-label{-webkit-tap-highlight-color:tra
   .topbar{margin-left:-10px;margin-right:-10px;padding-left:max(10px,env(safe-area-inset-left));padding-right:max(10px,env(safe-area-inset-right))}
   .eyebrow{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   h2{font-size:20px}
+  .focus-toolbar{position:sticky;top:calc(91px + env(safe-area-inset-top));z-index:70;display:flex;flex-direction:row;align-items:center;gap:8px;padding:8px 9px;box-shadow:0 8px 24px rgba(23,63,92,.14)}
+  .focus-toolbar>div:first-child{flex:0 0 auto;display:grid;grid-template-columns:auto;gap:0}
+  .focus-toolbar>div:first-child span,.focus-toolbar>div:first-child small{display:none}
+  .focus-toolbar strong{font-size:19px}
+  .focus-actions{display:flex;flex:1 1 auto;flex-wrap:nowrap;justify-content:flex-end;overflow-x:auto;scrollbar-width:none}
+  .focus-actions::-webkit-scrollbar{display:none}
+  .focus-actions>*{flex:0 0 auto;width:auto;min-height:38px;padding:6px 9px}
   .dashboard{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .metric{padding:9px 10px}
   .metric span,.metric p{white-space:normal}
@@ -147,6 +154,7 @@ button,.primary,.secondary,.danger,.import-label{-webkit-tap-highlight-color:tra
   .topbar{display:flex;align-items:center;padding-top:8px;padding-bottom:8px}
   .topbar .eyebrow{display:none}
   .topbar-actions{width:auto;min-width:min(48vw,360px)}
+  .focus-toolbar{top:calc(50px + env(safe-area-inset-top))}
   .dashboard{grid-template-columns:repeat(5,minmax(0,1fr))}
   .metric{padding:8px}
   .metric p{display:none}
@@ -32493,7 +32501,8 @@ function documentResources(t,limit=8){
     const path=String(r.path||r.title||'');
     return isOpenableResource(r) && (r.type==='pdf' || (r.type==='document' && /\.(pdf|ppt|pptx)$/i.test(path)));
   });
-  return uniqueResources([...preferred,...fallback]).sort((a,b)=>Number(!!b.notabilityUrl)-Number(!!a.notabilityUrl)).slice(0,limit);
+  const cloudRank=r=>r.baiduUrl||r.nasUrl||r.cloudUrl||r.oneDriveUrl||r.icloudUrl?3:derivedBaiduUrl(r)?2:r.notabilityUrl?1:0;
+  return uniqueResources([...preferred,...fallback]).sort((a,b)=>isMobileClient()?cloudRank(b)-cloudRank(a):Number(!!b.notabilityUrl)-Number(!!a.notabilityUrl)).slice(0,limit);
 }
 function names(rs, fallback){return rs.length?rs.map(r=>r.title).join('；'):fallback}
 function weekForTask(t){return DATA.weekly.find(w=>+w['周次']===+t['周次']) || weekData()}
@@ -32944,6 +32953,11 @@ function desktopFloatDocument(t){
   <\/script></body></html>`;
 }
 function openDesktopFloatWindow(t=dayData()){
+  if(isMobileClient()){
+    showFloatingTask(t);
+    showToast('已显示手机任务悬浮条');
+    return;
+  }
   const w=window.open('', 'airway_today_float', 'popup=yes,width=920,height=760,left=760,top=80,resizable=yes,scrollbars=yes');
   if(!w){ alert('浏览器阻止了弹窗。请允许此页面弹出窗口后再点一次。'); return; }
   w.document.open();
@@ -33023,7 +33037,8 @@ function bindFocusPanel(t){
   document.getElementById('nextStudyDay')?.addEventListener('click',e=>{const d=e.currentTarget.dataset.date,day=DATA.daily.find(x=>x['日期']===d);if(!day)return;state.selectedDate=d;state.selectedWeek=+day['周次'];persist(true);goToView('today')});
 }
 function desktopFloatPanel(){
-  return `<div class="panel desktop-float-panel"><div class="panel-header"><div><h3>桌面悬浮今日任务</h3><p>点击后直接打开有内容的小窗；顶部可拖动，内容精简。</p></div>${chip('置顶显示','green')}</div><div class="task-actions"><button class="primary" id="openDesktopFloat" type="button">打开桌面悬浮窗</button><button class="secondary" id="showWebFloat" type="button">网页内悬浮窗</button></div><p class="resource-note">弹窗直接显示任务-资源-KPI 一一对应；顶部可拖动。</p></div>`;
+  const mobile=isMobileClient();
+  return `<div class="panel desktop-float-panel"><div class="panel-header"><div><h3>${mobile?'手机任务悬浮条':'桌面悬浮今日任务'}</h3><p>${mobile?'显示可收起的今日任务、资源和 KPI；计时条滚动时保持可见。':'点击后直接打开有内容的小窗；顶部可拖动，内容精简。'}</p></div>${chip(mobile?'手机适配':'置顶显示','green')}</div><div class="task-actions"><button class="primary" id="openDesktopFloat" type="button">${mobile?'打开手机任务条':'打开桌面悬浮窗'}</button>${mobile?'':`<button class="secondary" id="showWebFloat" type="button">网页内悬浮窗</button>`}</div><p class="resource-note">${mobile?'悬浮条留在当前网页内，不调用 Safari 弹窗。':'弹窗直接显示任务-资源-KPI 一一对应；顶部可拖动。'}</p></div>`;
 }
 function renderToday(){title('今日任务'); const d=dayData(); content.innerHTML=`${focusPanel(d)}${learningPathPanel(d)}${roadmapPanel(d)}${clinicalTrainingPanel()}${desktopFloatPanel()}${customLearningPanel()}<div class="panel today-core"><div class="panel-header"><div><h3>${d['日期']} ${d['星期']}</h3><p>${d['主模块']}</p></div>${chip('第 '+d['周次']+' 周','green')}</div>${taskCard(d)}</div><div class="grid-two today-support">${weekPanel()}${notePanel('day_'+d['日期'],'今日复盘')}</div>`; document.getElementById('openDesktopFloat')?.addEventListener('click',()=>openDesktopFloatWindow(d)); document.getElementById('showWebFloat')?.addEventListener('click',()=>showFloatingTask(d)); bindFocusPanel(d); bindClinicalTrainingPanel(); bindCustomLearningPanel(); bindTasks(); bindSupplementUploads(); bindResourceButtons(); bindNotes()}
 function weekCompactCard(t){const complete=dayRecordedDone(t),cap=dayCapacity(actualDayType(t)),customN=(state.customTasks||[]).filter(x=>!x.deleted&&x.date===t['日期']).length; return `<article class="task week-task ${complete?'done':''}" data-key="${esc(key(t))}" data-date="${esc(t['日期'])}"><div class="task-main"><div><div class="task-title">${t['日期']} ${t['星期']}｜${t['每日学习主题']||t['今日任务']}</div><p>${actualDayType(t)} · ${cap.minutes}${customN?` · 自定义 ${customN} 项`:''}</p></div>${chip(complete?'已完成':'待完成',complete?'green':'amber')}</div><div class="task-actions"><button class="primary make-today" type="button">查看当天</button></div></article>`}
