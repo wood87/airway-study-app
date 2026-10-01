@@ -9,7 +9,7 @@
     <title>气道介入学习计划</title>
     <style>
 :root{--ink:#1c2430;--muted:#667085;--line:#d8dee8;--panel:#fff;--page:#f5f7fb;--blue:#2f6f9f;--green:#2f7d57;--amber:#a86422;--red:#b42318;--violet:#6f4bb8;--soft-blue:#e8f1f7;--soft-green:#e7f3ec;--soft-amber:#fff2df;--soft-red:#fde7e5;--shadow:0 10px 30px rgba(30,42,62,.08)}*{box-sizing:border-box}body{margin:0;font-family:Arial,"Helvetica Neue",sans-serif;color:var(--ink);background:var(--page)}button,input,select,textarea{font:inherit}#app{min-height:100vh;display:grid;grid-template-columns:290px minmax(0,1fr)}.sidebar{background:#17212f;color:#fff;padding:24px 18px;display:flex;flex-direction:column;gap:24px;position:sticky;top:0;height:100vh}.brand{display:flex;gap:12px;align-items:center}.brand-mark{width:42px;height:42px;display:grid;place-items:center;background:#3b82b7;border-radius:6px;font-weight:700}.brand h1{font-size:18px;margin:0 0 4px}.brand p{margin:0;color:#b7c4d4;font-size:12px}.nav{display:grid;gap:8px}.nav button,.sidebar-footer button,.import-label{border:0;border-radius:6px;padding:11px 12px;cursor:pointer}.nav button{background:transparent;color:#d9e4ef;text-align:left}.nav button.active,.nav button:hover{background:#243346;color:#fff}.sidebar-footer{margin-top:auto;display:grid;gap:8px}.sidebar-footer button,.import-label{background:#e8f1f7;color:#17212f;text-align:center;font-size:13px}.import-label input{display:none}.main{padding:24px 28px 48px;min-width:0}.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:18px}.eyebrow{color:var(--muted);font-size:13px;margin:0 0 6px}h2{margin:0;font-size:24px;letter-spacing:0}.topbar-actions{display:flex;gap:12px;align-items:end}label{display:grid;gap:6px;color:var(--muted);font-size:12px}input,select,textarea{border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);padding:9px 10px;min-height:38px}textarea{width:100%;min-height:84px;resize:vertical}.dashboard{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}.metric{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;box-shadow:var(--shadow)}.metric span{display:block;color:var(--muted);font-size:12px;margin-bottom:7px}.metric strong{font-size:22px}.metric p{margin:6px 0 0;color:var(--muted);font-size:12px}.content{display:grid;gap:14px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);padding:16px}.panel-header{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:12px}.panel h3{margin:0;font-size:17px}.panel p{margin:6px 0 0;color:var(--muted);line-height:1.45}.grid-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}.task-list{display:grid;gap:10px}.task{border:1px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:10px;background:#fff}.task.done{background:var(--soft-green)}.task-main{display:flex;justify-content:space-between;gap:12px}.task-title{font-weight:700;line-height:1.35}.task-meta,.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{background:var(--soft-blue);color:#245779;border-radius:999px;padding:5px 9px;font-size:12px}.chip.green{background:var(--soft-green);color:var(--green)}.chip.amber{background:var(--soft-amber);color:var(--amber)}.chip.red{background:var(--soft-red);color:var(--red)}.chip.violet{background:#eee8f7;color:var(--violet)}.task-actions{display:flex;gap:8px;flex-wrap:wrap}.primary,.secondary,.danger{border:1px solid transparent;border-radius:6px;padding:9px 11px;cursor:pointer}.primary{background:var(--blue);color:#fff}.secondary{background:#fff;color:var(--ink);border-color:var(--line)}.danger{background:var(--soft-red);color:var(--red)}.table{width:100%;border-collapse:collapse;table-layout:fixed}.table th,.table td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top;line-height:1.45}.table th{color:var(--muted);font-size:12px;font-weight:700}.review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.score-row{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}.empty{padding:28px;text-align:center;color:var(--muted)}@media(max-width:980px){#app{grid-template-columns:1fr}.sidebar{position:static;height:auto}.nav{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard,.grid-two,.review-grid{grid-template-columns:1fr}.topbar{display:grid}}
-.resource-actions{display:grid;gap:8px}.resource-card{border:1px solid var(--line);border-radius:8px;padding:12px;background:#fff;display:grid;gap:10px}.resource-card p{margin:4px 0 0;color:var(--muted);font-size:12px;word-break:break-all}.resource-list{display:grid;gap:10px;margin-top:12px}.toast{position:fixed;right:22px;bottom:22px;background:#17212f;color:#fff;border-radius:6px;padding:10px 12px;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);pointer-events:none;transition:.18s ease;z-index:20}.toast.show{opacity:1;transform:translateY(0)}a.primary,a.secondary{display:inline-flex;align-items:center;text-decoration:none}
+.resource-actions{display:grid;gap:8px}.mobile-link-tools{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding-top:2px}.mobile-link-tools button{min-height:34px;padding:7px 10px;font-size:12px}.resource-card{border:1px solid var(--line);border-radius:8px;padding:12px;background:#fff;display:grid;gap:10px}.resource-card p{margin:4px 0 0;color:var(--muted);font-size:12px;word-break:break-all}.resource-list{display:grid;gap:10px;margin-top:12px}.toast{position:fixed;right:22px;bottom:22px;background:#17212f;color:#fff;border-radius:6px;padding:10px 12px;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);pointer-events:none;transition:.18s ease;z-index:20}.toast.show{opacity:1;transform:translateY(0)}a.primary,a.secondary{display:inline-flex;align-items:center;text-decoration:none}
 .daily-detail{border:1px solid var(--line);border-radius:8px;background:#f8fafc;padding:12px;display:grid;gap:8px}.daily-detail h4{margin:0;color:var(--ink);font-size:13px}.daily-detail p{margin:0;color:var(--muted);line-height:1.5}.review-grid.compact{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:2px}
 @media(max-width:720px){.review-grid.compact{grid-template-columns:1fr}}
 
@@ -21,7 +21,7 @@
 .learning-resources h4{margin:0 0 10px;font-size:14px}.learning-resource{display:grid;gap:6px;margin-bottom:10px}.learning-resource>p{margin:0;color:var(--muted);font-size:13px;line-height:1.45;background:#f8fafc;border:1px solid var(--line);border-radius:6px;padding:8px}.resource-note{font-size:12px;color:var(--muted);line-height:1.4}
 .board-row{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:10px 0}.board-row p{margin:3px 0 0;color:var(--muted);font-size:12px}.bar{height:10px;background:#e8edf3;border-radius:999px;overflow:hidden}.bar span{display:block;height:100%;background:var(--blue)}@media(max-width:720px){.board-row{grid-template-columns:1fr}}
 
-.floating-task{position:fixed;right:24px;bottom:24px;width:min(520px,calc(100vw - 28px));max-height:78vh;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 18px 60px rgba(15,23,32,.22);z-index:9999;overflow:hidden}.float-head{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#17212f;color:#fff;padding:10px 12px;cursor:move}.float-head .secondary{padding:6px 8px;font-size:12px}.float-body{padding:12px;overflow:auto;max-height:calc(78vh - 48px)}.float-body h4{margin:0 0 8px}.float-body p{margin:6px 0;color:var(--muted);line-height:1.45}.float-list{display:grid;gap:8px;margin-top:10px}.float-list>div{border:1px solid var(--line);border-radius:6px;padding:8px;background:#f8fafc}.dragging{user-select:none}
+.floating-task{position:fixed;right:24px;bottom:24px;width:min(520px,calc(100vw - 28px));max-height:78vh;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 18px 60px rgba(15,23,32,.22);z-index:9999;overflow:hidden}.float-head{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#17212f;color:#fff;padding:10px 12px;cursor:move;touch-action:none}.float-head .secondary{padding:6px 8px;font-size:12px}.float-body{padding:12px;overflow:auto;max-height:calc(78vh - 48px)}.float-body h4{margin:0 0 8px}.float-body p{margin:6px 0;color:var(--muted);line-height:1.45}.float-list{display:grid;gap:8px;margin-top:10px}.float-list>div{border:1px solid var(--line);border-radius:6px;padding:8px;background:#f8fafc}.dragging{user-select:none;touch-action:none}
 .task-title{cursor:pointer}.task-title:hover{text-decoration:underline}
 
 .task-resource-map{display:grid;gap:12px}.task-resource-row{border:1px solid var(--line);border-radius:8px;background:#fbfcff;padding:12px;display:grid;gap:10px}.map-head strong{display:block;font-size:14px}.map-head p{margin:5px 0 0;color:var(--muted);font-size:13px;line-height:1.45}.resource-map-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.map-cell{border:1px solid var(--line);border-radius:8px;background:#fff;padding:10px;display:grid;gap:8px;align-content:start}.map-cell h5{margin:0;color:var(--ink);font-size:13px}.map-cell p{margin:0;color:var(--muted);font-size:12px;line-height:1.42}.map-cell .resource-card{padding:9px;gap:8px}.map-cell .resource-card strong{font-size:13px}.map-cell .primary{justify-content:center;text-align:center;font-size:12px;padding:8px}.kpi-line{border-top:1px solid var(--line);padding-top:8px;color:var(--ink)!important}.muted-small{background:#f8fafc;border:1px dashed var(--line);border-radius:6px;padding:8px}
@@ -32466,11 +32466,35 @@ const LOCAL_DOCUMENT_MAP = [
   {keys:['冷冻肺活检'],path:`${ICLOUD_AIRWAY_ROOT}/气道狭窄治疗、冷冻肺活检/冷冻肺活检(1).pptx`,source:'iCloud'},
   {keys:['冷冻治疗','电烧灼及APC治疗'],path:`${ICLOUD_AIRWAY_ROOT}/气道狭窄治疗、冷冻肺活检/经支气管镜的冷冻治疗、电烧灼及APC治疗 (1).ppt`,source:'iCloud'}
 ];
+const RESOURCE_ALIGNMENT = [
+  {keys:['常规支气管镜检查技术','支气管镜检查流程'],mastery:'术前核对、局麻、标准进镜顺序、各叶段检查、记录与退出镜流程',output:'闭卷画检查路径，并写出术前、术中、术后各 3 个核对点'},
+  {keys:['成人诊断性可弯曲支气管镜检查术应用指南'],mastery:'适应证、禁忌证、风险分层、监测、取材与并发症预防',output:'完成 1 份适应证/禁忌证和高风险患者核对表'},
+  {keys:['呼吸内镜操作技术规范'],mastery:'规范化操作、标本处理、质量控制、洗消和安全底线',output:'提炼 3 条规范要求，并转成 1 条本院 SOP 修改'},
+  {keys:['介入呼吸内镜并发症及处理'],mastery:'低氧、出血、气胸、穿孔、气道失火及术后恶化的识别和处置顺序',output:'写出 1 个并发症处置流程，首要动作和升级标准不得错'},
+  {keys:['复杂疾病呼吸内镜介入治疗'],mastery:'复杂病例的影像评估、术式组合、器械选择、备用方案与终止标准',output:'完成 1 例“首选方案-备用方案-风险-终止标准”病例卡'},
+  {keys:['支气管镜介入治疗 第2版'],mastery:'硬镜、球囊、热消融、冷冻和支架的适应证、器械与操作关键点',output:'完成当日技术的器械清单、3 个关键动作和 2 个风险点'},
+  {keys:['EBUS-TBNA临床操作技巧'],mastery:'目标站点、镜体定位、针具装卸、穿刺动作、负压、ROSE 与标本处理',output:'画出 1 条目标站点穿刺路径，并口述完整取材链路'},
+  {keys:['纵隔与肺门淋巴结的识别','淋巴结站图像分区解析'],mastery:'2R/2L、4R/4L、7、10、11 站的 CT 边界、血管关系与 EBUS 对应视野',output:'随机图像站点识别正确率达到 90%，错题截图归档'},
+  {keys:['17组肺部内镜','肺部内镜＋CT图鉴'],mastery:'CT 表现、内镜所见和取材/介入价值的一一对应',output:'完成 1 例 CT-镜下表现-介入决策三联卡'},
+  {keys:['CT引导下经皮肺穿刺活检实例操作'],mastery:'病灶选择、穿刺路径、胸膜距离、血管避让及气胸/出血处理',output:'完成 1 例穿刺路径规划并标注 2 个风险点'},
+  {keys:['内科胸腔镜检查的临床应用及研究'],mastery:'适应证、禁忌证、入路选择、系统探查、胸膜活检和诊断价值',output:'完成 1 份病例选择与入路判断表'},
+  {keys:['内科胸腔镜诊疗规范PPT版'],mastery:'术前准备、局麻镇静、Trocar 入路、活检止血、胸管及术后监测',output:'闭卷写出全流程，红线步骤遗漏 0 项'},
+  {keys:['胸腔镜肺叶肺段切除术图解与视频'],mastery:'VATS 孔位、肺门/叶裂解剖、血管支气管处理、出血控制和转开胸阈值',output:'完成 1 台手术的结构化观摩记录'},
+  {keys:['肺癌解剖性肺段切除图谱'],mastery:'肺段支气管、动静脉和段间平面的三维关系',output:'画出目标肺段的支气管-动脉-静脉关系'},
+  {keys:['支气管镜消毒'],mastery:'床旁预处理、测漏、清洗、漂洗、消毒/灭菌、干燥储存与追溯',output:'按顺序复述洗消流程，关键步骤遗漏 0 项'},
+  {keys:['无痛支气管镜的麻醉及气道管理'],mastery:'麻醉评估、药物和监测、通气策略、低氧处理及苏醒标准',output:'与麻醉老师完成 1 个低氧情景推演'},
+  {keys:['支气管镜操作相关大出血预防与救治'],mastery:'高风险识别、侧卧隔离、吸引/球囊封堵、止血、栓塞和外科升级',output:'90 秒内口述大出血首轮处置，顺序错误 0 项'},
+  {keys:['硬镜介入'],mastery:'器械装台、牙齿保护、头位、声门暴露、旋转进镜、通气连接和退出镜',output:'模型装台与口述进镜连续 3 次，无器械遗漏或危险动作'},
+  {keys:['支气管肺泡灌洗术'],mastery:'病例选择、灌洗肺段、液量/回收、标本分装与低氧预防',output:'口述 BAL 全链路并完成 1 份标本送检清单'},
+  {keys:['支气管镜下活检'],mastery:'取材部位、钳道出钳、活检顺序、标本处理和出血预案',output:'完成 1 个病例取材方案，说明每份标本用途'},
+  {keys:['冷冻肺活检'],mastery:'患者筛选、靶肺段、封堵球囊、冻结时间、整块退出和出血/气胸处理',output:'完成 1 例 TBCB 方案和团队应急分工'},
+  {keys:['冷冻治疗','电烧灼及APC治疗'],mastery:'冷冻与热消融的选型、作用方式、FiO2 管理、深度控制和并发症预防',output:'完成技术对比表，并正确处理 3 个选型情景'}
+];
 let currentView = 'today';
 const runtimeUploadUrls = {};
 let focusInterval=null, focusRemaining=0, focusContextDate='';
 function initialPlanDate(){const d=new Date(), local=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-'), last=DATA.daily[DATA.daily.length-1]?.['日期']; return local>=DATA.planStart&&(!last||local<=last)?local:DATA.planStart}
-const defaultState = () => ({selectedDate: initialPlanDate(), selectedWeek: 1, tasks:{}, itemProgress:{}, dailyMastery:{}, weeklyReviews:{}, selfScores:{}, teacherDone:{}, teacherRecords:{}, sopDone:{}, vendorDone:{}, notes:{}, weekOverrides:{}, appliedPlans:{}, uploads:{}, customResources:[], customTasks:[], taskReflections:{}, hiddenItems:{}, resourceRoot:''});
+const defaultState = () => ({selectedDate: initialPlanDate(), selectedWeek: 1, tasks:{}, itemProgress:{}, dailyMastery:{}, weeklyReviews:{}, selfScores:{}, teacherDone:{}, teacherRecords:{}, sopDone:{}, vendorDone:{}, notes:{}, weekOverrides:{}, appliedPlans:{}, uploads:{}, customResources:[], customTasks:[], taskReflections:{}, hiddenItems:{}, cloudLinks:{}, floatingTaskEnabled:false, floatingTaskDate:'', floatingTaskPosition:null, floatingTaskMinimized:false, resourceRoot:''});
 const state = loadState();
 const $ = s => document.querySelector(s);
 const dashboard = $('#dashboard'), content = $('#content'), viewTitle = $('#viewTitle'), datePicker = $('#datePicker'), weekPicker = $('#weekPicker');
@@ -32478,7 +32502,7 @@ function loadState(){try{const loaded={...defaultState(), ...JSON.parse(localSto
 function persist(noRender=false){localStorage.setItem(STORE_KEY, JSON.stringify(state)); if(!noRender) render()}
 function activateView(view){currentView=view; document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.view===view))}
 function goToView(view){const change=()=>{activateView(view);render()}; if(document.startViewTransition)document.startViewTransition(change);else change()}
-function init(){datePicker.value=state.selectedDate; weekPicker.innerHTML=DATA.weekly.map(w=>`<option value="${w['周次']}">第 ${w['周次']} 周</option>`).join(''); weekPicker.value=state.selectedWeek; datePicker.onchange=()=>{state.selectedDate=datePicker.value<DATA.planStart?DATA.planStart:datePicker.value; const d=DATA.daily.find(x=>x['日期']===state.selectedDate); if(d) state.selectedWeek=+d['周次']; persist()}; weekPicker.onchange=()=>{state.selectedWeek=+weekPicker.value; const d=tasksForWeek(state.selectedWeek)[0]; if(d) state.selectedDate=d['日期']; persist()}; document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>goToView(b.dataset.view)); $('#exportBtn').onclick=exportProgress; $('#importInput').onchange=importProgress; render()}
+function init(){datePicker.value=state.selectedDate; weekPicker.innerHTML=DATA.weekly.map(w=>`<option value="${w['周次']}">第 ${w['周次']} 周</option>`).join(''); weekPicker.value=state.selectedWeek; datePicker.onchange=()=>{state.selectedDate=datePicker.value<DATA.planStart?DATA.planStart:datePicker.value; const d=DATA.daily.find(x=>x['日期']===state.selectedDate); if(d) state.selectedWeek=+d['周次']; persist()}; weekPicker.onchange=()=>{state.selectedWeek=+weekPicker.value; const d=tasksForWeek(state.selectedWeek)[0]; if(d) state.selectedDate=d['日期']; persist()}; document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>goToView(b.dataset.view)); $('#exportBtn').onclick=exportProgress; $('#importInput').onchange=importProgress; render(); if(state.floatingTaskEnabled)setTimeout(()=>showFloatingTask(DATA.daily.find(d=>d['日期']===state.floatingTaskDate)||dayData(),true),0)}
 function weekData(){return effectiveWeek(state.selectedWeek)}
 function dayData(){return DATA.daily.find(d=>d['日期']===state.selectedDate)||planDays()[0]}
 function planDays(){return DATA.daily.filter(d=>d['日期']>=DATA.planStart)}
@@ -32527,6 +32551,13 @@ function preferredResources(t,type){
 function resourcesByType(t, type, limit=3){
   return uniqueResources([...preferredResources(t,type),...candidateResources(t).filter(r=>r.type===type && isOpenableResource(r))]).slice(0,limit);
 }
+function dayResourceIndex(t,count){
+  if(!count)return 0;
+  const days=tasksForWeek(t?.['周次']||state.selectedWeek), idx=Math.max(0,days.findIndex(d=>d['日期']===t?.['日期']));
+  return idx%count;
+}
+function dailyDocumentResource(t){const rows=documentResources(t,8);return rows[dayResourceIndex(t,rows.length)]||null}
+function dailyVideoResource(t){const rows=resourcesByType(t,'video',8);return rows[dayResourceIndex(t,rows.length)]||null}
 function documentResources(t,limit=8){
   const preferred=uniqueResources([...preferredResources(t,'pdf'),...preferredResources(t,'document')]);
   const fallback=candidateResources(t).filter(r=>{
@@ -32631,9 +32662,9 @@ function tunedItemText(item,t,isReview=false){
     return `复习同通道薄弱内容 ${mins} 分钟；先闭卷复述，再打开原资料纠错。KPI：${Math.min(3,dose.points)} 个关键点 + 1 个纠错点，评分 ≥4。`;
   }
   if(item.customTaskId)return item.text;
-  const track=dailyLearningTrack(t), doc=documentResources(t,1)[0], video=resourcesByType(t,'video',1)[0];
+  const track=dailyLearningTrack(t), doc=dailyDocumentResource(t), video=dailyVideoResource(t);
   const map={
-    book:`阅读《${doc?.title||track.docs[0]}》${dose.doc} 分钟；只掌握“${track.topic}”中的：${track.mastery}。KPI：${dose.points} 条要点 + 1 个临床应用，评分 ≥4。`,
+    book:`阅读《${doc?.title||track.docs[0]}》${dose.doc} 分钟；只掌握：${doc?alignedResourceMastery(doc,track):track.mastery}。KPI：${doc?alignedResourceOutput(doc,dose):`${dose.points} 条要点 + 1 个临床应用`}，评分 ≥4。`,
     video:`观看《${video?.title||track.videos[0]}》${dose.video} 分钟；只提取与“${track.topic}”对应的内容。KPI：${Math.min(3,dose.points)} 个关键动作/识别点 + 1 个风险或误区，评分 ≥4。`,
     ct:`${ctStageFor(t).task} 达标：${ctStageFor(t).gate}，评分 ≥4。`,
     app_anatomy:`${track.app}；训练 ${dose.app} 分钟。KPI：记录 ${Math.min(3,dose.points)} 个结构/识别点或 1 条路径，评分 ≥4。`,
@@ -32730,18 +32761,19 @@ function candidateResources(t){
     const tagScore=(r.tags||[]).reduce((n,tag)=> n + (text.includes(tag) ? 1 : 0), 0);
     const titleScore=text.includes(r.title) ? 2 : 0;
     const hasCloud=!!(r.baiduUrl || r.nasUrl || r.cloudUrl || r.oneDriveUrl || r.icloudUrl || derivedBaiduUrl(r));
-    const cloudBonus=hasCloud ? 7 : 0;
-    const videoCloudBonus=(r.type==='video' && hasCloud) ? 8 : 0;
+    const cloudBonus=hasCloud ? 1 : 0;
+    const videoCloudBonus=(r.type==='video' && hasCloud) ? 2 : 0;
     const pdfBonus=(r.type==='pdf') ? 2 : 0;
     const availableBonus=r.available ? 1 : 0;
     const unavailableVideoPenalty=(r.type==='video' && !(r.baiduUrl || r.nasUrl || r.cloudUrl || r.oneDriveUrl || r.icloudUrl)) ? -5 : 0;
-    return {r, score:tagScore + titleScore + cloudBonus + videoCloudBonus + pdfBonus + availableBonus + unavailableVideoPenalty};
-  }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).map(x=>x.r);
+    const relevance=tagScore+titleScore;
+    return {r, relevance, score:tagScore*5 + titleScore*5 + cloudBonus + videoCloudBonus + pdfBonus + availableBonus + unavailableVideoPenalty};
+  }).filter(x=>x.relevance>0 || x.r.custom).sort((a,b)=>b.score-a.score).map(x=>x.r);
 }
 function matchedResources(t){return candidateResources(t).filter(isOpenableResource).slice(0,4)}
 function resourceStudyInstruction(r,t){
   const topic=t['今日任务'] || t['主模块'] || '';
-  if(r.type==='pdf'||/\.(pdf|ppt|pptx)$/i.test(String(r.path||r.title||''))) return `学：围绕“${topic}”读对应章节/幻灯。KPI：按当日日型计时；提炼要点和临床应用。达标：能脱稿复述适应证、禁忌证、风险点。`;
+  if(r.type==='pdf'||/\.(pdf|ppt|pptx)$/i.test(String(r.path||r.title||''))){const track=dailyLearningTrack(t),dose=studyDose(t);return `掌握：${alignedResourceMastery(r,track)}。KPI：${alignedResourceOutput(r,dose)}；评分 ≥4。`;}
   if(r.type==='video') return `看：完整观看或至少 20-40 分钟。KPI：3 个操作步骤；2 个风险点；1 条 SOP 修改。达标：能口述操作链和并发症处理。`;
   return `用：围绕今日主题提取 3 条可执行要点。`;
 }
@@ -32756,9 +32788,9 @@ function groupedLearningResources(t){
 }
 function itemResourceKpi(item,t,doseTask=t){
   if(item.customTaskId){const ct=(state.customTasks||[]).find(x=>x.id===item.customTaskId); if(ct)return {master:ct.mastery,kpi:ct.kpi,time:`${ct.minutes||20} 分钟`}}
-  const dt=actualDayType(doseTask), weekend=dt==='双休日', id=item.sourceId||item.id, dose=studyDose(doseTask), ct=ctStageFor(t), track=dailyLearningTrack(t);
+  const dt=actualDayType(doseTask), weekend=dt==='双休日', id=item.sourceId||item.id, dose=studyDose(doseTask), ct=ctStageFor(t), track=dailyLearningTrack(t), doc=dailyDocumentResource(t);
   const map={
-    book:{master:track.mastery,kpi:`${dose.points} 条要点 + 1 个临床应用`,time:`${dose.doc} 分钟`},
+    book:{master:doc?alignedResourceMastery(doc,track):track.mastery,kpi:doc?alignedResourceOutput(doc,dose):`${dose.points} 条要点 + 1 个临床应用`,time:`${dose.doc} 分钟`},
     video:{master:`从指定视频掌握：${track.mastery}`,kpi:`${Math.min(3,dose.points)} 个动作/识别点 + 1 个风险或误区`,time:`${dose.video} 分钟`},
     ct:{master:ct.mastery,kpi:ct.gate,time:weekend?'35-40 分钟':'20-25 分钟'},
     app_anatomy:{master:track.app,kpi:`${Math.min(3,dose.points)} 个结构/识别点或 1 条路径记录`,time:`${dose.app} 分钟`},
@@ -32785,12 +32817,12 @@ function resourceOpenButton(r, kind){
   if(r.custom&&r.url)return `<a class="primary concise-open" href="${esc(r.url)}" target="_blank" rel="noopener">打开网页</a>`;
   if(r.notabilityUrl) return `<a class="primary concise-open" href="${r.notabilityUrl}" target="_blank" rel="noopener">Notability 打开</a>`;
   if(r.type==='pdf') return `<a class="primary concise-open open-file" data-title="${esc(r.title||'PDF')}" data-url="${esc(resourceUrl(r))}" data-path="${esc(r.path||'')}" href="${resourceUrl(r)}" target="_blank" rel="noopener">${resourceLabel(r)}</a>`;
-  if(r.type==='video' && r.baiduUrl) return `<a class="primary concise-open open-file baidu-play" data-title="${esc(r.title)}" data-baidupath="${esc(r.baiduPath || '')}" data-url="${esc(r.baiduUrl)}" href="${r.baiduUrl}" target="_blank" rel="noopener">百度目录播放</a>`;
+  if(r.type==='video' && r.baiduUrl) return `<a class="primary concise-open open-file baidu-play" data-title="${esc(r.title)}" data-baidupath="${esc(r.baiduPath || '')}" data-url="${esc(r.baiduUrl)}" href="${r.baiduUrl}" target="_blank" rel="noopener">打开百度视频目录</a>`;
   return `<a class="primary concise-open open-file" data-url="${esc(resourceUrl(r))}" href="${resourceUrl(r)}" target="_blank" rel="noopener">打开${kind}</a>`;
 }
 function conciseResourceCell(title, r, fallback, master, kpi, time, kind){
   const name=r ? (r.title || '未命名资源') : fallback;
-  return `<div class="map-cell concise-cell"><h5>${title}</h5><strong class="resource-name">${name}</strong><p><b>掌握：</b>${master}</p><p><b>KPI：</b>${kpi}</p><p><b>时间：</b>${time}</p>${r?resourceOpenButton(r,kind):''}</div>`;
+  return `<div class="map-cell concise-cell"><h5>${title}</h5><strong class="resource-name">${name}</strong><p><b>掌握：</b>${master}</p><p><b>KPI：</b>${kpi}</p><p><b>时间：</b>${time}</p>${r?resourceOpenButton(r,kind)+mobileLinkControls(r):''}</div>`;
 }
 function uploadKey(dayKey,itemId){return `${dayKey}__${itemId}`}
 function fileSizeText(n){if(!n)return''; if(n<1024*1024)return Math.round(n/1024)+' KB'; return Math.round(n/1024/1024*10)/10+' MB'}
@@ -32804,16 +32836,16 @@ function taskResourceMap(t){
   if(!items.length) return '';
   const rows=items.map((item,idx)=>{
     const resourceTask=item.isReview?(DATA.daily.find(d=>d['日期']===item.date)||t):t;
-    const books=documentResources(resourceTask,8), videos=resourcesByType(resourceTask,'video',8);
-    const id=item.sourceId||item.id, book=pickResource(books,0), video=pickResource(videos,0), k=itemResourceKpi(item,resourceTask,t), appText=appOrPracticeForItem(item,resourceTask), track=dailyLearningTrack(resourceTask);
+    const book=dailyDocumentResource(resourceTask), video=dailyVideoResource(resourceTask);
+    const id=item.sourceId||item.id, k=itemResourceKpi(item,resourceTask,t), appText=appOrPracticeForItem(item,resourceTask), track=dailyLearningTrack(resourceTask), dose=studyDose(t);
     let primary='';
     if(item.customTaskId){const cr=(state.customResources||[]).find(r=>r.id===item.resourceId); primary=conciseResourceCell('自定义资料',cr,'无关联资料；按任务文字完成。',k.master,k.kpi,k.time,'资料');}
     else if(id==='video'||id==='observation') primary=conciseResourceCell('主资源：视频',video,'未匹配到可播放视频；使用科室病例或 CT 复盘替代。',k.master,k.kpi,k.time,'视频');
     else if(id==='app_anatomy'||id==='ct'||id==='teacher') primary=`<div class="map-cell concise-cell"><h5>主资源：${id==='teacher'?'老师对接':'App/实践'}</h5><strong class="resource-name">${id==='teacher'?'CT/胸外/麻醉/ICU 老师':'3D Body / e-Anatomy / POCUS101'}</strong><p><b>掌握：</b>${appText}</p><p><b>KPI：</b>${k.kpi}</p><p><b>时间：</b>${k.time}</p></div>`;
-    else primary=conciseResourceCell('主资源：PDF/PPT',book,'未匹配到 PDF/PPT；请上传补充资料。',k.master,k.kpi,k.time,'资料');
+    else primary=conciseResourceCell('主资源：PDF/PPT',book,'未匹配到 PDF/PPT；请上传补充资料。',book?alignedResourceMastery(book,track):k.master,book?alignedResourceOutput(book,dose):k.kpi,k.time,'资料');
     return `<section class="task-resource-row"><div class="map-head"><strong>${idx+1}. ${item.isReview?'补弱｜':''}${item.label}</strong>${chip(isCtLearningDay(resourceTask)?track.level:`第 ${resourceTask['周次']} 阶`,'violet')}<p>${item.text}</p></div><div class="resource-map-grid concise-map">${primary}${supplementUploadCell(dayKey,item)}</div></section>`;
   }).join('');
-  return `<div class="task-resource-map panel" style="box-shadow:none"><div class="panel-header"><div><h3>今日任务-资源-KPI</h3><p>PDF/PPT 优先使用已配置的 Notability 入口，否则直接打开 Mac 文件；三个通道分别完成、评分并参与明日排程。</p></div>${chip(`${items.length} 项`,'green')}</div>${rows}</div>`;
+  return `<div class="task-resource-map panel" style="box-shadow:none"><div class="panel-header"><div><h3>今日任务-资源-KPI</h3><p>资料、掌握内容与 KPI 一一对应；Mac 打开本机原文件，手机使用已绑定的文件级分享链接，未绑定时只进入对应云盘目录。</p></div>${chip(`${items.length} 项`,'green')}</div>${rows}</div>`;
 }
 function bindSupplementUploads(){
   document.querySelectorAll('.supp-upload').forEach(input=>{input.onchange=e=>{const uk=input.dataset.uploadKey, files=Array.from(e.target.files||[]); if(!uk || !files.length)return; state.uploads[uk]=files.map(f=>({name:f.name,type:f.type,size:f.size,lastModified:f.lastModified})); files.forEach((f,idx)=>{runtimeUploadUrls[`${uk}__${idx}`]=URL.createObjectURL(f)}); persist();}});
@@ -32857,6 +32889,17 @@ function directCloudUrl(r){
 function normalizedResourceTitle(value){
   return String(value||'').toLowerCase().replace(/\.(pdf|pptx?|docx?|xlsx?)$/i,'').replace(/[\s_（）()【】\[\]·,:：，。！!&+＋-]/g,'');
 }
+function resourceKey(r){return normalizedResourceTitle(r?.title||r?.path||'')}
+function matchedAlignment(r){
+  const title=resourceKey(r); if(!title)return null;
+  const matches=[];
+  RESOURCE_ALIGNMENT.forEach(item=>item.keys.forEach(key=>{const needle=normalizedResourceTitle(key);if(needle&&(title.includes(needle)||needle.includes(title)))matches.push({item,score:needle.length})}));
+  return matches.sort((a,b)=>b.score-a.score)[0]?.item||null;
+}
+function alignedResourceMastery(r,track){return matchedAlignment(r)?.mastery||`${track.topic}：${track.mastery}`}
+function alignedResourceOutput(r,dose){const x=matchedAlignment(r);return x?.output||`${dose.points} 条关键点 + 1 个临床应用`}
+function configuredMobileUrl(r){return String(state.cloudLinks?.[resourceKey(r)]||r.mobileUrl||r.nasDirectUrl||r.baiduShareUrl||'').trim()}
+function isFileShareUrl(url){return /\/filemgr\/share-download\//i.test(url)||/pan\.baidu\.com\/(s\/|share\/)/i.test(url)||/\.(pdf|pptx?|mp4|mov)(\?|#|$)/i.test(url)}
 function mappedLocalDocument(r){
   const title=normalizedResourceTitle(r?.title||r?.path||'');
   if(!title)return null;
@@ -32886,14 +32929,15 @@ function isOpenableResource(r){
 function resourceUrl(r){
   if(r.custom&&r.url)return r.url;
   if(r.custom&&r.kind==='file')return '#';
-  const direct = directCloudUrl(r);
-  if(isMobileClient())return direct || NAS_ROOT;
+  const direct = directCloudUrl(r), mobileDirect=configuredMobileUrl(r);
+  if(isMobileClient())return mobileDirect || direct || NAS_ROOT;
   if(r.notabilityUrl)return r.notabilityUrl;
   if(mappedLocalDocument(r) || (r.path && r.available===true))return macLocalUrl(r);
   return direct || macLocalUrl(r);
 }
 function resourceSource(r){
   const mapped=mappedLocalDocument(r);
+  if(isMobileClient() && configuredMobileUrl(r)) return '手机直达';
   if(!isMobileClient() && mapped) return mapped.source;
   if(!isMobileClient() && r.path && r.available===true) return 'Mac 本机';
   if(r.baiduUrl) return '百度网盘目录';
@@ -32902,18 +32946,23 @@ function resourceSource(r){
   if(r.icloudUrl) return 'iCloud';
   if(r.cloudUrl) return '云盘';
   if(derivedBaiduUrl(r)) return '百度网盘目录';
-  if(isMobileClient()) return 'NAS';
+  if(isMobileClient()) return 'NAS 资料库';
   return '本机文件';
 }
 function resourceLabel(r){
   if(!isMobileClient() && (mappedLocalDocument(r) || (r.path && r.available===true))) return r.type==='pdf'?'在 Mac 打开 PDF':'在 Mac 打开';
-  if(r.baiduUrl && r.type === 'video') return '打开百度目录播放';
-  if(r.baiduUrl) return '打开百度目录';
-  if(isMobileClient() && derivedBaiduUrl(r)) return r.type==='video'?'百度目录播放':'百度网盘打开目录';
-  if(isMobileClient() && !directCloudUrl(r)) return '在 NAS 中查找';
+  if(isMobileClient() && configuredMobileUrl(r)) return r.type==='video'?'直接播放视频':'手机直接打开';
+  if(r.baiduUrl && r.type === 'video') return '打开百度视频目录';
+  if(r.baiduUrl) return '打开百度资料目录';
+  if(isMobileClient() && derivedBaiduUrl(r)) return r.type==='video'?'打开百度视频目录':'打开百度资料目录';
+  if(isMobileClient() && !configuredMobileUrl(r)) return r.type==='video'?'打开云盘视频目录':'打开云盘资料目录';
   if(r.type === 'video') return (resourceSource(r)==='本机文件') ? '打开/观看视频' : `打开${resourceSource(r)}视频`;
   if(r.type === 'pdf') return r.notabilityUrl?'打开 Notability':'直接打开 PDF';
   return `打开${resourceSource(r)}资源`;
+}
+function mobileLinkControls(r){
+  const key=resourceKey(r), direct=configuredMobileUrl(r);
+  return `<div class="mobile-link-tools"><button class="secondary set-mobile-link" type="button" data-resource-key="${esc(key)}" data-resource-title="${esc(r.title||'资料')}">${direct?'更换手机直达链接':'绑定手机直达链接'}</button>${direct?`<button class="secondary clear-mobile-link" type="button" data-resource-key="${esc(key)}">清除</button>`:''}<span class="muted-small">${direct?(isFileShareUrl(direct)?'已绑定文件级链接':'已绑定链接，请确认可直达文件'):'未绑定时仅打开云盘对应目录'}</span></div>`;
 }
 function resourceButtons(r){
   if(!isOpenableResource(r)) return '';
@@ -32926,11 +32975,12 @@ function resourceButtons(r){
     const title = esc(r.title || 'PDF');
     const url=resourceUrl(r), inNotability=!!r.notabilityUrl, localNoteUrl=!isMobileClient()?macNotabilityUrl(r):'';
     const noteButton=localNoteUrl?`<a class="secondary open-file" data-title="${title}" data-url="${esc(localNoteUrl)}" href="${esc(localNoteUrl)}" target="_blank" rel="noopener">在 Notability 打开</a>`:'';
-    const help=isMobileClient()?'手机端打开百度网盘/NAS；仅在配置真实 Notability 分享链接后显示 Notability 入口。':localNoteUrl?'可打开原始 PDF，或定位到对应 Notability 笔记。':'直接打开 Mac 中的原始 PDF/PPT。';
-    return `<div class="resource-card"><div><strong>${r.title}</strong><p>PDF · ${inNotability?'Notability':source}${sourceChip}${extra}</p></div><div class="resource-actions"><a class="primary ${inNotability?'':'open-file'}" data-title="${title}" data-url="${esc(url)}" data-path="${esc(r.path||'')}" href="${url}" target="_blank" rel="noopener">${inNotability?'在 Notability 打开':resourceLabel(r)}</a>${noteButton}</div><div class="resource-note">${help}</div></div>`;
+    const help=isMobileClient()?(configuredMobileUrl(r)?'已使用这份资料的文件级分享链接。':'尚未绑定文件级链接；当前按钮只进入对应百度/NAS目录，请在上方绑定后实现直达。'):localNoteUrl?'可打开原始 PDF，或定位到对应 Notability 笔记。':'直接打开 Mac 中的原始 PDF/PPT。';
+    const linkTools=(matchedAlignment(r)||mappedLocalDocument(r))?mobileLinkControls(r):'';
+    return `<div class="resource-card"><div><strong>${r.title}</strong><p>PDF · ${inNotability?'Notability':source}${sourceChip}${extra}</p></div><div class="resource-actions"><a class="primary ${inNotability?'':'open-file'}" data-title="${title}" data-url="${esc(url)}" data-path="${esc(r.path||'')}" href="${url}" target="_blank" rel="noopener">${inNotability?'在 Notability 打开':resourceLabel(r)}</a>${noteButton}</div>${linkTools}<div class="resource-note">${help}</div></div>`;
   }
   if(r.type === 'video' && r.baiduUrl){
-    return `<div class="resource-card"><div><strong>${r.title}</strong><p>video · 百度云目录播放${sourceChip}${extra}</p></div><a class="primary open-file baidu-play" data-title="${esc(r.title)}" data-baidupath="${esc(r.baiduPath || '')}" data-url="${esc(r.baiduUrl)}" href="${r.baiduUrl}" target="_blank" rel="noopener">打开百度目录播放</a></div>`;
+    return `<div class="resource-card"><div><strong>${r.title}</strong><p>video · 百度云视频目录${sourceChip}${extra}</p></div><a class="primary open-file baidu-play" data-title="${esc(r.title)}" data-baidupath="${esc(r.baiduPath || '')}" data-url="${esc(r.baiduUrl)}" href="${r.baiduUrl}" target="_blank" rel="noopener">打开百度视频目录</a></div>`;
   }
   if(r.type === 'video' && (r.nasUrl || r.cloudUrl || r.oneDriveUrl || r.icloudUrl)){
     return `<div class="resource-card"><div><strong>${r.title}</strong><p>video · 云端/NAS 播放 · ${source}</p></div><a class="primary open-file" data-url="${esc(resourceUrl(r))}" href="${resourceUrl(r)}" target="_blank" rel="noopener">打开视频</a></div>`;
@@ -32942,6 +32992,8 @@ function shortPath(path){
   return parts.length > 4 ? '.../' + parts.slice(-4).join('/') : path;
 }
 function bindResourceButtons(){
+  document.querySelectorAll('.set-mobile-link').forEach(btn=>btn.onclick=()=>{const current=state.cloudLinks?.[btn.dataset.resourceKey]||'',url=prompt(`粘贴“${btn.dataset.resourceTitle}”的文件级链接。\n\n绿联：文件管理器 → 选中文件 → 分享 → 外部用户 → 复制链接\n百度：分享该文件后复制分享链接`,current);if(url===null)return;const clean=url.trim();if(!/^https?:\/\//i.test(clean))return alert('请输入以 http:// 或 https:// 开头的分享链接。');if(!isFileShareUrl(clean))return alert('这看起来仍是登录页或目录链接。请粘贴绿联 share-download 链接、百度分享链接，或以 PDF/PPT/MP4 等文件名结尾的直链。');state.cloudLinks[btn.dataset.resourceKey]=clean;persist()});
+  document.querySelectorAll('.clear-mobile-link').forEach(btn=>btn.onclick=()=>{delete state.cloudLinks[btn.dataset.resourceKey];persist()});
   document.querySelectorAll('.open-custom-resource').forEach(btn=>btn.onclick=()=>openCustomResource(btn.dataset.resourceId));
   document.querySelectorAll('.open-file').forEach(link=>{
     const direct = link.dataset.url || '';
@@ -32977,18 +33029,24 @@ function effectiveWeek(w){
 
 function floatingTaskHtml(t){
   const items=contentItems(t);
-  return `<div id="floatingTask" class="floating-task"><div class="float-head"><strong>${t['日期']} ${t['星期']} 今日任务</strong><div><button id="floatMin" class="secondary">最小化</button><button id="floatClose" class="secondary">关闭</button></div></div><div id="floatBody" class="float-body"><h4>${t['今日任务']}</h4><p><strong>掌握：</strong>${t['具体掌握内容']||''}</p><p><strong>KPI：</strong>${t['每日KPI']||t['量化 KPI']||''}</p><p><strong>自测：</strong>${t['自测达标标准']||t['自测问题']||''}</p><div class="float-list">${items.map(i=>`<div><strong>${i.label}</strong><p>${i.text}</p></div>`).join('')}</div></div></div>`;
+  return `<div id="floatingTask" class="floating-task" data-date="${esc(t['日期'])}"><div class="float-head"><strong>${t['日期']} ${t['星期']} 今日任务</strong><div><button id="floatMin" class="secondary">最小化</button><button id="floatClose" class="secondary">关闭</button></div></div><div id="floatBody" class="float-body"><h4>${t['今日任务']}</h4><p><strong>掌握：</strong>${t['具体掌握内容']||''}</p><p><strong>KPI：</strong>${t['每日KPI']||t['量化 KPI']||''}</p><p><strong>自测：</strong>${t['自测达标标准']||t['自测问题']||''}</p><div class="float-list">${items.map(i=>`<div><strong>${i.label}</strong><p>${i.text}</p></div>`).join('')}</div></div></div>`;
 }
-function showFloatingTask(t=dayData()){
+function saveFloatingTaskState(){localStorage.setItem(STORE_KEY,JSON.stringify(state))}
+function showFloatingTask(t=dayData(),restoring=false){
   document.getElementById('floatingTask')?.remove();
   document.body.insertAdjacentHTML('beforeend', floatingTaskHtml(t));
   const box=document.getElementById('floatingTask'), head=box.querySelector('.float-head'), body=box.querySelector('#floatBody');
-  let drag=false, sx=0, sy=0, ox=0, oy=0;
-  head.addEventListener('mousedown',e=>{drag=true; sx=e.clientX; sy=e.clientY; const r=box.getBoundingClientRect(); ox=r.left; oy=r.top; document.body.classList.add('dragging')});
-  window.addEventListener('mousemove',e=>{if(!drag)return; box.style.left=(ox+e.clientX-sx)+'px'; box.style.top=(oy+e.clientY-sy)+'px'; box.style.right='auto'; box.style.bottom='auto';});
-  window.addEventListener('mouseup',()=>{drag=false; document.body.classList.remove('dragging')});
-  box.querySelector('#floatClose').onclick=()=>box.remove();
-  box.querySelector('#floatMin').onclick=()=>{body.hidden=!body.hidden; box.querySelector('#floatMin').textContent=body.hidden?'展开':'最小化'};
+  state.floatingTaskEnabled=true; state.floatingTaskDate=t['日期'];
+  if(!restoring)state.floatingTaskMinimized=false;
+  if(state.floatingTaskPosition){const p=state.floatingTaskPosition,maxX=Math.max(8,innerWidth-box.offsetWidth-8),maxY=Math.max(8,innerHeight-box.offsetHeight-8);box.style.left=Math.min(Math.max(8,p.x),maxX)+'px';box.style.top=Math.min(Math.max(8,p.y),maxY)+'px';box.style.right='auto';box.style.bottom='auto'}
+  body.hidden=!!state.floatingTaskMinimized; box.querySelector('#floatMin').textContent=body.hidden?'展开':'最小化'; saveFloatingTaskState();
+  let drag=false,sx=0,sy=0,ox=0,oy=0,pointerId=null;
+  const move=e=>{if(!drag||e.pointerId!==pointerId)return;e.preventDefault();const maxX=Math.max(8,innerWidth-box.offsetWidth-8),maxY=Math.max(8,innerHeight-box.offsetHeight-8),x=Math.min(Math.max(8,ox+e.clientX-sx),maxX),y=Math.min(Math.max(8,oy+e.clientY-sy),maxY);box.style.left=x+'px';box.style.top=y+'px';box.style.right='auto';box.style.bottom='auto'};
+  const stop=e=>{if(!drag||e.pointerId!==pointerId)return;drag=false;document.body.classList.remove('dragging');try{head.releasePointerCapture(pointerId)}catch{}const r=box.getBoundingClientRect();state.floatingTaskPosition={x:Math.round(r.left),y:Math.round(r.top)};saveFloatingTaskState()};
+  head.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;drag=true;pointerId=e.pointerId;sx=e.clientX;sy=e.clientY;const r=box.getBoundingClientRect();ox=r.left;oy=r.top;head.setPointerCapture(pointerId);document.body.classList.add('dragging')});
+  head.addEventListener('pointermove',move);head.addEventListener('pointerup',stop);head.addEventListener('pointercancel',stop);
+  box.querySelector('#floatClose').onclick=()=>{state.floatingTaskEnabled=false;state.floatingTaskPosition=null;saveFloatingTaskState();box.remove()};
+  box.querySelector('#floatMin').onclick=()=>{body.hidden=!body.hidden;state.floatingTaskMinimized=body.hidden;box.querySelector('#floatMin').textContent=body.hidden?'展开':'最小化';saveFloatingTaskState()};
 }
 function compact(v, limit=96){
   const text=String(v||'').replace(/\s+/g,' ').trim();
@@ -33099,7 +33157,7 @@ function bindFocusPanel(t){
 }
 function desktopFloatPanel(){
   const mobile=isMobileClient();
-  return `<div class="panel desktop-float-panel"><div class="panel-header"><div><h3>${mobile?'手机任务悬浮条':'桌面悬浮今日任务'}</h3><p>${mobile?'显示可收起的今日任务、资源和 KPI；计时条滚动时保持可见。':'点击后直接打开有内容的小窗；顶部可拖动，内容精简。'}</p></div>${chip(mobile?'手机适配':'置顶显示','green')}</div><div class="task-actions"><button class="primary" id="openDesktopFloat" type="button">${mobile?'打开手机任务条':'打开桌面悬浮窗'}</button>${mobile?'':`<button class="secondary" id="showWebFloat" type="button">网页内悬浮窗</button>`}</div><p class="resource-note">${mobile?'悬浮条留在当前网页内，不调用 Safari 弹窗。':'弹窗直接显示任务-资源-KPI 一一对应；顶部可拖动。'}</p></div>`;
+  return `<div class="panel desktop-float-panel"><div class="panel-header"><div><h3>${mobile?'手机任务悬浮条':'桌面悬浮今日任务'}</h3><p>${mobile?'手指拖动、收起并记住位置；刷新或重新打开网页后自动恢复。':'点击后直接打开有内容的小窗；顶部可拖动，内容精简。'}</p></div>${chip(mobile?'手机适配':'置顶显示','green')}</div><div class="task-actions"><button class="primary" id="openDesktopFloat" type="button">${mobile?'显示并保持任务条':'打开桌面悬浮窗'}</button>${mobile?'':`<button class="secondary" id="showWebFloat" type="button">网页内悬浮窗</button>`}</div><p class="resource-note">${mobile?'网页在前台或重新打开后会恢复；网页彻底关闭期间请用“日历同步”中的 iOS 日历小组件显示今日任务。':'弹窗直接显示任务-资源-KPI 一一对应；顶部可拖动。'}</p></div>`;
 }
 function renderToday(){title('今日任务'); const d=dayData(); content.innerHTML=`${focusPanel(d)}${learningPathPanel(d)}${roadmapPanel(d)}${clinicalTrainingPanel()}${desktopFloatPanel()}${customLearningPanel()}<div class="panel today-core"><div class="panel-header"><div><h3>${d['日期']} ${d['星期']}</h3><p>${d['主模块']}</p></div>${chip('第 '+d['周次']+' 周','green')}</div>${taskCard(d)}</div><div class="grid-two today-support">${weekPanel()}${notePanel('day_'+d['日期'],'今日复盘')}</div>`; document.getElementById('openDesktopFloat')?.addEventListener('click',()=>openDesktopFloatWindow(d)); document.getElementById('showWebFloat')?.addEventListener('click',()=>showFloatingTask(d)); bindFocusPanel(d); bindClinicalTrainingPanel(); bindCustomLearningPanel(); bindTasks(); bindSupplementUploads(); bindResourceButtons(); bindNotes()}
 function weekCompactCard(t){const complete=dayRecordedDone(t),cap=dayCapacity(actualDayType(t)),customN=(state.customTasks||[]).filter(x=>!x.deleted&&x.date===t['日期']).length; return `<article class="task week-task ${complete?'done':''}" data-key="${esc(key(t))}" data-date="${esc(t['日期'])}"><div class="task-main"><div><div class="task-title">${t['日期']} ${t['星期']}｜${t['每日学习主题']||t['今日任务']}</div><p>${actualDayType(t)} · ${cap.minutes}${customN?` · 自定义 ${customN} 项`:''}</p></div>${chip(complete?'已完成':'待完成',complete?'green':'amber')}</div><div class="task-actions"><button class="primary make-today" type="button">查看当天</button></div></article>`}
@@ -33160,7 +33218,7 @@ function renderResources(){title('资料和 App'); const allResources=[...(windo
 function icsText(v){return String(v||'').replaceAll('\\','\\\\').replaceAll('\n','\\n').replaceAll(',','\\,').replaceAll(';','\\;')}
 function nextIsoDate(date){const d=new Date(date+'T00:00:00Z'); d.setUTCDate(d.getUTCDate()+1); return d.toISOString().slice(0,10)}
 function exportDynamicCalendar(){const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,''); const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Airway Dynamic Study Plan//CN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:专业学习任务-气道介入','X-WR-TIMEZONE:Asia/Shanghai']; planDays().forEach(t=>{if(isFreeDayType(actualDayType(t)))return; const p=adaptivePlan(t), summary=p.items.length?p.items.map(x=>x.label).join('；'):'恢复/休息'; lines.push('BEGIN:VEVENT',`UID:airway-dynamic-${t['日期'].replaceAll('-','')}@yangxiaoyu.local`,`DTSTAMP:${stamp}`,`DTSTART;VALUE=DATE:${t['日期'].replaceAll('-','')}`,`DTEND;VALUE=DATE:${nextIsoDate(t['日期']).replaceAll('-','')}`,`SUMMARY:${icsText('【专业学习】'+summary)}`,`DESCRIPTION:${icsText(actualDayType(t)+'｜'+p.cap.minutes+'｜'+p.items.map(x=>x.text).join('；'))}`,'CATEGORIES:专业学习,气道介入','STATUS:CONFIRMED','END:VEVENT')}); lines.push('END:VCALENDAR'); const blob=new Blob([lines.join('\r\n')+'\r\n'],{type:'text/calendar;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a'); a.href=url;a.download='airway-dynamic-study-calendar.ics';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
-function renderCalendar(){title('日历同步'); const delUrl=new URL('delete_professional_study_calendar.ics',window.location.href).href, days=planDays(), first=days[0], last=days[days.length-1], studyCount=days.filter(d=>!isFreeDayType(actualDayType(d))).length; content.innerHTML=`<div class="panel"><div class="panel-header"><div><h3>同步到独立日历</h3><p>计划覆盖 ${first['日期']} 到 ${last['日期']}。动态 ICS 会包含当前日型、自定义任务和最新 KPI。</p></div>${chip('Asia/Shanghai','green')}</div><div class="task-actions"><button class="primary" id="exportDynamicCalendar" type="button">导出当前动态计划 ICS</button><a class="secondary" href="${delUrl}" download="cancel-airway-study-events.ics">下载取消事件 ICS</a></div></div><div class="panel"><h3>彻底删除全部学习任务</h3><p><strong>iPhone：</strong>日历 App → 底部“日历”→ “专业学习任务-气道介入”右侧信息按钮 → 删除日历。</p><p><strong>Mac：</strong>日历 App 左侧找到“专业学习任务-气道介入”→ 右键 → 删除。删除独立日历后，所有学习事件会完全消失。</p><p class="resource-note">说明：ICS 文件没有系统权限强制删除既有事件；取消 ICS 仅用于兼容支持 METHOD:CANCEL 的日历服务。要保证完全看不到，必须删除独立日历。</p></div><div class="panel"><h3>本周日历内容</h3><div class="task-list">${tasksForWeek(state.selectedWeek).map(t=>{const p=adaptivePlan(t);return `<div class="task"><div class="task-title">${t['日期']} ${t['星期']}：${p.items.map(x=>x.label).join('；')||'恢复/休息'}</div><p>${actualDayType(t)}；${p.cap.minutes}</p></div>`}).join('')}</div></div>`; document.getElementById('exportDynamicCalendar')?.addEventListener('click',exportDynamicCalendar)}
+function renderCalendar(){title('日历同步'); const delUrl=new URL('delete_professional_study_calendar.ics',window.location.href).href, days=planDays(), first=days[0], last=days[days.length-1], studyCount=days.filter(d=>!isFreeDayType(actualDayType(d))).length; content.innerHTML=`<div class="panel"><div class="panel-header"><div><h3>同步到独立日历</h3><p>计划覆盖 ${first['日期']} 到 ${last['日期']}。动态 ICS 会包含当前日型、自定义任务和最新 KPI。</p></div>${chip('Asia/Shanghai','green')}</div><div class="task-actions"><button class="primary" id="exportDynamicCalendar" type="button">导出当前动态计划 ICS</button><a class="secondary" href="${delUrl}" download="cancel-airway-study-events.ics">下载取消事件 ICS</a></div></div><div class="panel"><h3>网页关闭后的手机任务条</h3><p>导入动态 ICS 后，在 iPhone 主屏幕长按空白处 → 添加小组件 → 日历 → 选择“日程”样式。网页关闭后，系统日历小组件仍显示今天的学习任务；点击任务可查看完整 KPI。</p><p class="resource-note">iOS 不允许网页悬浮在其他 App 上。网页内任务条支持手指拖动并记住位置，系统外显示由日历小组件承接。</p></div><div class="panel"><h3>彻底删除全部学习任务</h3><p><strong>iPhone：</strong>日历 App → 底部“日历”→ “专业学习任务-气道介入”右侧信息按钮 → 删除日历。</p><p><strong>Mac：</strong>日历 App 左侧找到“专业学习任务-气道介入”→ 右键 → 删除。删除独立日历后，所有学习事件会完全消失。</p><p class="resource-note">说明：ICS 文件没有系统权限强制删除既有事件；取消 ICS 仅用于兼容支持 METHOD:CANCEL 的日历服务。要保证完全看不到，必须删除独立日历。</p></div><div class="panel"><h3>本周日历内容</h3><div class="task-list">${tasksForWeek(state.selectedWeek).map(t=>{const p=adaptivePlan(t);return `<div class="task"><div class="task-title">${t['日期']} ${t['星期']}：${p.items.map(x=>x.label).join('；')||'恢复/休息'}</div><p>${actualDayType(t)}；${p.cap.minutes}</p></div>`}).join('')}</div></div>`; document.getElementById('exportDynamicCalendar')?.addEventListener('click',exportDynamicCalendar)}
 
 const ASK_KB = [
   {
