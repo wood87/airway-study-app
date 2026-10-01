@@ -32434,6 +32434,38 @@ const STORE_KEY = 'airway-study-app-v1';
 const RESOURCE_PREFIX = '/Volumes/Download/CodexWorkspace/07_baidu_sync/mirror/apps/QNAP_HybridBackupSync';
 const BAIDU_ROOT = 'https://pan.baidu.com/disk/main?version=4.23.5&from=mac_yunguanjia&channel=1099b&privilege=#/index?category=all&path=';
 const NAS_ROOT = 'https://yxynas-uf9s.cn79.ug.link/desktop/?os=ugospro#/loading';
+const NOTABILITY_ROOT = '/Users/yangxiaoyu/Library/Mobile Documents/ZP9ZJ4EF3S~com~gingerlabs~Notability/Documents';
+const ICLOUD_AIRWAY_ROOT = '/Users/yangxiaoyu/Library/Mobile Documents/com~apple~CloudDocs/气管镜资料';
+const LOCAL_DOCUMENT_MAP = [
+  {keys:['呼吸内镜操作技术规范'],path:`${NOTABILITY_ROOT}/呼吸内镜操作技术规范.nbn/PDFs/0CE1A6C9-7AEB-48D7-8442-9418BB57BF80.pdf`,notePath:`${NOTABILITY_ROOT}/呼吸内镜操作技术规范.nbn`,source:'Notability'},
+  {keys:['支气管镜介入治疗 第2版','支气管镜介入治疗第2版'],path:`${NOTABILITY_ROOT}/支气管镜介入治疗 第2版.nbn/PDFs/1F55FFED-B7A7-44BA-894F-D580833B2BC3.pdf`,notePath:`${NOTABILITY_ROOT}/支气管镜介入治疗 第2版.nbn`,source:'Notability'},
+  {keys:['介入呼吸内镜并发症及处理'],path:`${NOTABILITY_ROOT}/介入呼吸内镜并发症及处理.nbn/PDFs/0BF0AC28-035A-4512-94FA-609F89B2B04A.pdf`,notePath:`${NOTABILITY_ROOT}/介入呼吸内镜并发症及处理.nbn`,source:'Notability'},
+  {keys:['复杂疾病呼吸内镜介入治疗'],path:`${NOTABILITY_ROOT}/复杂疾病呼吸内镜介入治疗 临床思维及实例分析.nbn/PDFs/797C2BA8-7A4A-4516-9C75-7116E95F844F.pdf`,notePath:`${NOTABILITY_ROOT}/复杂疾病呼吸内镜介入治疗 临床思维及实例分析.nbn`,source:'Notability'},
+  {keys:['支气管镜下图谱课件'],path:`${NOTABILITY_ROOT}/支气管镜下图谱课件.nbn/PDFs/93CD85C1-5221-4367-8ACF-796148277052.pdf`,notePath:`${NOTABILITY_ROOT}/支气管镜下图谱课件.nbn`,source:'Notability'},
+  {keys:['内科胸腔镜'],path:`${NOTABILITY_ROOT}/内科胸腔镜.nbn/PDFs/BA439287-88A0-4123-B0BE-C11F6E8AC0A8.pdf`,notePath:`${NOTABILITY_ROOT}/内科胸腔镜.nbn`,source:'Notability'},
+  {keys:['胸腔镜肺叶肺段切除术图解与视频'],path:`${NOTABILITY_ROOT}/胸腔镜肺叶肺段切除术图解与视频.nbn/PDFs/52BF7552-CCDA-4B93-BC3C-F51D6470A61B.pdf`,notePath:`${NOTABILITY_ROOT}/胸腔镜肺叶肺段切除术图解与视频.nbn`,source:'Notability'},
+  {keys:['中国呼吸内镜介入治疗典型病例集锦'],path:`${NOTABILITY_ROOT}/14775000_中国呼吸内镜介入治疗典型病例集锦  第二卷9787518961221.nbn/PDFs/C38E4A27-3B7B-4FC1-A046-97A0F6359840.pdf`,notePath:`${NOTABILITY_ROOT}/14775000_中国呼吸内镜介入治疗典型病例集锦  第二卷9787518961221.nbn`,source:'Notability'},
+  {keys:['电子支气管镜的临床应用'],path:`${NOTABILITY_ROOT}/电子支气管镜的临床应用.nbn/PDFs/F1604A88-89EE-4722-9754-4EA4697AB5D1.pdf`,notePath:`${NOTABILITY_ROOT}/电子支气管镜的临床应用.nbn`,source:'Notability'},
+  {keys:['常规支气管镜检查技术','支气管镜检查流程'],path:`${ICLOUD_AIRWAY_ROOT}/常规支气管镜检查技术 & 支气管镜检查流程.pdf`,source:'iCloud'},
+  {keys:['成人诊断性可弯曲支气管镜检查术应用指南'],path:`${ICLOUD_AIRWAY_ROOT}/【诊疗方案】成人诊断性可弯曲支气管镜检查术应用指南（2019年版）.pdf`,source:'iCloud'},
+  {keys:['EBUS-TBNA临床操作技巧'],path:`${ICLOUD_AIRWAY_ROOT}/EBUS-TBNA临床操作技巧（图文解析版）.pdf`,source:'iCloud'},
+  {keys:['内科胸腔镜检查的临床应用及研究'],path:`${ICLOUD_AIRWAY_ROOT}/内科胸腔镜检查的临床应用及研究.pdf`,source:'iCloud'},
+  {keys:['内科胸腔镜诊疗规范PPT版'],path:`${ICLOUD_AIRWAY_ROOT}/内科胸腔镜诊疗规范PPT版.pdf`,source:'iCloud'},
+  {keys:['支气管镜下常见异常形态分类'],path:`${ICLOUD_AIRWAY_ROOT}/图文 _ 支气管镜下常见异常形态分类.pdf`,source:'iCloud'},
+  {keys:['淋巴结站图像分区解析'],path:`${ICLOUD_AIRWAY_ROOT}/淋巴结站图像分区解析与EBUS支气管镜视图.pdf`,source:'iCloud'},
+  {keys:['纵隔与肺门淋巴结的识别'],path:`${ICLOUD_AIRWAY_ROOT}/纵隔与肺门淋巴结的识别与精准CT分区.pdf`,source:'iCloud'},
+  {keys:['17组肺部内镜','肺部内镜＋CT图鉴'],path:`${ICLOUD_AIRWAY_ROOT}/17组肺部内镜＋CT图鉴，收下这份实用手册！.pdf`,source:'iCloud'},
+  {keys:['CT引导下经皮肺穿刺活检实例操作'],path:`${ICLOUD_AIRWAY_ROOT}/CT引导下经皮肺穿刺活检实例操作、预防和处理原则.pdf`,source:'iCloud'},
+  {keys:['支气管镜消毒'],path:`${ICLOUD_AIRWAY_ROOT}/支气管镜消毒(1).pptx`,source:'iCloud'},
+  {keys:['无痛支气管镜的麻醉及气道管理'],path:`${ICLOUD_AIRWAY_ROOT}/无痛支气管镜的麻醉及气道管理.pptx`,source:'iCloud'},
+  {keys:['支气管镜操作相关大出血预防与救治'],path:`${ICLOUD_AIRWAY_ROOT}/支气管镜操作相关大出血预防与救治1.pptx`,source:'iCloud'},
+  {keys:['硬镜介入'],path:`${ICLOUD_AIRWAY_ROOT}/硬镜介入.pptx`,source:'iCloud'},
+  {keys:['支气管腔内超声'],path:`${ICLOUD_AIRWAY_ROOT}/支气管腔内超声.pptx`,source:'iCloud'},
+  {keys:['支气管肺泡灌洗术'],path:`${ICLOUD_AIRWAY_ROOT}/支气管肺泡灌洗术 (2).pptx`,source:'iCloud'},
+  {keys:['支气管镜下活检'],path:`${ICLOUD_AIRWAY_ROOT}/基础操作（活检、肺泡灌洗）/支气管镜下活检.pptx`,source:'iCloud'},
+  {keys:['冷冻肺活检'],path:`${ICLOUD_AIRWAY_ROOT}/气道狭窄治疗、冷冻肺活检/冷冻肺活检(1).pptx`,source:'iCloud'},
+  {keys:['冷冻治疗','电烧灼及APC治疗'],path:`${ICLOUD_AIRWAY_ROOT}/气道狭窄治疗、冷冻肺活检/经支气管镜的冷冻治疗、电烧灼及APC治疗 (1).ppt`,source:'iCloud'}
+];
 let currentView = 'today';
 const runtimeUploadUrls = {};
 let focusInterval=null, focusRemaining=0, focusContextDate='';
@@ -32502,7 +32534,8 @@ function documentResources(t,limit=8){
     return isOpenableResource(r) && (r.type==='pdf' || (r.type==='document' && /\.(pdf|ppt|pptx)$/i.test(path)));
   });
   const cloudRank=r=>r.baiduUrl||r.nasUrl||r.cloudUrl||r.oneDriveUrl||r.icloudUrl?3:derivedBaiduUrl(r)?2:r.notabilityUrl?1:0;
-  return uniqueResources([...preferred,...fallback]).sort((a,b)=>isMobileClient()?cloudRank(b)-cloudRank(a):Number(!!b.notabilityUrl)-Number(!!a.notabilityUrl)).slice(0,limit);
+  const localRank=r=>mappedLocalDocument(r)?.notePath?3:mappedLocalDocument(r)?2:r.available===true?1:0;
+  return uniqueResources([...preferred,...fallback]).sort((a,b)=>isMobileClient()?cloudRank(b)-cloudRank(a):localRank(b)-localRank(a)).slice(0,limit);
 }
 function names(rs, fallback){return rs.length?rs.map(r=>r.title).join('；'):fallback}
 function weekForTask(t){return DATA.weekly.find(w=>+w['周次']===+t['周次']) || weekData()}
@@ -32821,13 +32854,34 @@ function derivedBaiduUrl(r){
 function directCloudUrl(r){
   return r.cloudUrl || r.nasUrl || r.baiduUrl || r.oneDriveUrl || r.icloudUrl || derivedBaiduUrl(r);
 }
+function normalizedResourceTitle(value){
+  return String(value||'').toLowerCase().replace(/\.(pdf|pptx?|docx?|xlsx?)$/i,'').replace(/[\s_（）()【】\[\]·,:：，。！!&+＋-]/g,'');
+}
+function mappedLocalDocument(r){
+  const title=normalizedResourceTitle(r?.title||r?.path||'');
+  if(!title)return null;
+  const matches=[];
+  LOCAL_DOCUMENT_MAP.forEach(item=>item.keys.forEach(key=>{
+    const needle=normalizedResourceTitle(key);
+    if(needle && (title.includes(needle)||needle.includes(title)))matches.push({item,score:needle.length});
+  }));
+  return matches.sort((a,b)=>b.score-a.score)[0]?.item||null;
+}
+function macLocalUrl(r){
+  const path=mappedLocalDocument(r)?.path || mapResourcePath(r?.path||'');
+  return path?`http://127.0.0.1:8767/api/open?path=${encodeURIComponent(path)}`:'';
+}
+function macNotabilityUrl(r){
+  const notePath=mappedLocalDocument(r)?.notePath||'';
+  return notePath?`http://127.0.0.1:8767/api/open?app=notability&path=${encodeURIComponent(notePath)}`:'';
+}
 function isPlayableVideo(r){return false}
 function isOpenableResource(r){
   if(r.custom&&r.kind==='file')return true;
   if(r.custom&&r.url)return true;
   if(r.type === 'video') return !!(r.cloudUrl || r.nasUrl || r.baiduUrl || r.oneDriveUrl || r.icloudUrl);
-  if(r.type === 'pdf') return r.available === true || !!(r.cloudUrl || r.nasUrl || r.baiduUrl || r.oneDriveUrl || r.icloudUrl);
-  return !!(r.cloudUrl || r.nasUrl || r.baiduUrl || r.oneDriveUrl || r.icloudUrl) || r.available === true;
+  if(r.type === 'pdf') return !!mappedLocalDocument(r) || r.available === true || !!(r.cloudUrl || r.nasUrl || r.baiduUrl || r.oneDriveUrl || r.icloudUrl);
+  return !!mappedLocalDocument(r) || !!(r.cloudUrl || r.nasUrl || r.baiduUrl || r.oneDriveUrl || r.icloudUrl) || r.available === true;
 }
 function resourceUrl(r){
   if(r.custom&&r.url)return r.url;
@@ -32835,9 +32889,13 @@ function resourceUrl(r){
   const direct = directCloudUrl(r);
   if(isMobileClient())return direct || NAS_ROOT;
   if(r.notabilityUrl)return r.notabilityUrl;
-  return direct || fileUrl(r.path || '');
+  if(mappedLocalDocument(r) || (r.path && r.available===true))return macLocalUrl(r);
+  return direct || macLocalUrl(r);
 }
 function resourceSource(r){
+  const mapped=mappedLocalDocument(r);
+  if(!isMobileClient() && mapped) return mapped.source;
+  if(!isMobileClient() && r.path && r.available===true) return 'Mac 本机';
   if(r.baiduUrl) return '百度网盘目录';
   if(r.nasUrl) return 'NAS';
   if(r.oneDriveUrl) return 'OneDrive';
@@ -32848,6 +32906,7 @@ function resourceSource(r){
   return '本机文件';
 }
 function resourceLabel(r){
+  if(!isMobileClient() && (mappedLocalDocument(r) || (r.path && r.available===true))) return r.type==='pdf'?'在 Mac 打开 PDF':'在 Mac 打开';
   if(r.baiduUrl && r.type === 'video') return '打开百度目录播放';
   if(r.baiduUrl) return '打开百度目录';
   if(isMobileClient() && derivedBaiduUrl(r)) return r.type==='video'?'百度目录播放':'百度网盘打开目录';
@@ -32865,8 +32924,10 @@ function resourceButtons(r){
   const extra = r.baiduPath ? ` · 百度路径：${r.baiduPath}` : '';
   if(r.type === 'pdf'){
     const title = esc(r.title || 'PDF');
-    const url=resourceUrl(r), inNotability=!!r.notabilityUrl;
-    return `<div class="resource-card"><div><strong>${r.title}</strong><p>PDF · ${inNotability?'Notability':source} · ${shownPath}${sourceChip}${extra}</p></div><a class="primary ${inNotability?'':'open-file'}" data-title="${title}" data-url="${esc(url)}" data-path="${esc(r.path||'')}" href="${url}" target="_blank" rel="noopener">${inNotability?'在 Notability 打开':resourceLabel(r)}</a><div class="resource-note">书名：${title}。${inNotability?'已配置 Notability 入口。':isMobileClient()?'手机端优先打开百度网盘或 NAS。':'直接打开原始 PDF。'}</div></div>`;
+    const url=resourceUrl(r), inNotability=!!r.notabilityUrl, localNoteUrl=!isMobileClient()?macNotabilityUrl(r):'';
+    const noteButton=localNoteUrl?`<a class="secondary open-file" data-title="${title}" data-url="${esc(localNoteUrl)}" href="${esc(localNoteUrl)}" target="_blank" rel="noopener">在 Notability 打开</a>`:'';
+    const help=isMobileClient()?'手机端打开百度网盘/NAS；仅在配置真实 Notability 分享链接后显示 Notability 入口。':localNoteUrl?'可打开原始 PDF，或定位到对应 Notability 笔记。':'直接打开 Mac 中的原始 PDF/PPT。';
+    return `<div class="resource-card"><div><strong>${r.title}</strong><p>PDF · ${inNotability?'Notability':source}${sourceChip}${extra}</p></div><div class="resource-actions"><a class="primary ${inNotability?'':'open-file'}" data-title="${title}" data-url="${esc(url)}" data-path="${esc(r.path||'')}" href="${url}" target="_blank" rel="noopener">${inNotability?'在 Notability 打开':resourceLabel(r)}</a>${noteButton}</div><div class="resource-note">${help}</div></div>`;
   }
   if(r.type === 'video' && r.baiduUrl){
     return `<div class="resource-card"><div><strong>${r.title}</strong><p>video · 百度云目录播放${sourceChip}${extra}</p></div><a class="primary open-file baidu-play" data-title="${esc(r.title)}" data-baidupath="${esc(r.baiduPath || '')}" data-url="${esc(r.baiduUrl)}" href="${r.baiduUrl}" target="_blank" rel="noopener">打开百度目录播放</a></div>`;
